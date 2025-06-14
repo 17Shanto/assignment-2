@@ -26,10 +26,6 @@ CREATE TABLE sightings(
     notes TEXT
 );
 
--- DROP Table sightings;
--- DROP table species;
--- DROP Table rangers;
-
 
 
 INSERT INTO rangers(name,region) 
@@ -75,7 +71,7 @@ SELECT common_name from species
 LEFT JOIN sightings on species.species_id = sightings.species_id
 WHERE sighting_id IS NULL;
 
--- SELECT common_name, sighting_time, name FROM
+
 
 SELECT common_name, sighting_time, name FROM sightings s
 JOIN rangers r on s.ranger_id = r.ranger_id
@@ -97,7 +93,7 @@ SELECT
     END AS time_of_day
 FROM sightings;
 
-SELECT * FROM rangers;
+
 
 DELETE FROM rangers
 WHERE NOT EXISTS (
